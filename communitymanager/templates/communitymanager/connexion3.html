@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="communitymanager/static/communitymanager/style_connexion.css" media="screen" type="text/css" />
+    <title>Connexion</title>
+</head>
+<body>
+
+<h1> Connexion au SupaerNet </h1>
+
+{% if error %}
+<p><strong>Utilisateur inconnu ou mauvais de mot de passe.
+</strong></p>
+{% endif %}
+
+{% if user.is_authenticated %}
+
+    Vous êtes connecté, {{user.username}} !
+    <li><a href="{%  url 'deconnexion' %}" class="top-rigth-menu"> Se déconnecter </a></li>
+
+{% else %}
+
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Se connecter"/>
+    </form>
+
+{%endif%}
+
+</body>
+</html>

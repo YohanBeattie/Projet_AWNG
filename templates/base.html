@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<!--- <link rel = "stylesheet" href = "/media/css/style.css"/>-->
+<title> {% block title %} This is our community {% endblock %}</title>
+</head>
+<body>
+<header> Veuillez vous identifier </header>
+    <nav>
+        {%block nav %}
+        <ul>
+            <li><a href="/"> Accueil </a></li>
+            <!--<li><a href="/Connexion/">Connexion</a></li>-->
+            <!--<li><a href="/Contact/">Contact</a></li>-->
+        </ul>
+    {% endblock %}
+    </nav>
+    <section id="content">
+        {%block content%} {% endblock %}
+    </section>
+<footer>&copy; Supaero community</footer>
+</body>
+</html>
